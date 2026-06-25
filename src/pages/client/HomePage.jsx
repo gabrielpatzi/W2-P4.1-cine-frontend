@@ -16,7 +16,9 @@ const HomePage = () => {
 
     moviesService.getAll({ titulo: busqueda || undefined, genero: genero || undefined })
       .then((data) => {
-        if (activo) setPeliculas(data)
+        console.log("PELICULAS:", data);
+        if (activo) setPeliculas(data || [])
+          
       })
       .catch((error) => {
         console.error('Error al cargar la cartelera', error)
