@@ -11,7 +11,7 @@ const showtimesService = {
     return new Promise((resolve, reject) => {
       api.get('/funciones')
         .then((response) => {
-          resolve(response.data)
+          resolve(response.data.showtimes ?? response.data)
         })
         .catch((error) => {
           reject(error)

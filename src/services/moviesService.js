@@ -11,7 +11,7 @@ const moviesService = {
     return new Promise((resolve, reject) => {
       api.get('/peliculas', { params: filtros })
         .then((response) => {
-          resolve(response.data.movies)
+          resolve(response.data.movies ?? response.data)
         })
         .catch((error) => {
           reject(error)

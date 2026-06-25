@@ -23,7 +23,7 @@ const AdminRoomsPage = () => {
   const recargarSalas = () => {
     roomsService.getAll()
       .then((data) => {
-        setSalas(data)
+        setSalas(data || [])
       })
       .catch((err) => {
         console.error('Error al cargar salas', err)
@@ -35,7 +35,7 @@ const AdminRoomsPage = () => {
 
     roomsService.getAll()
       .then((data) => {
-        if (activo) setSalas(data)
+        if (activo) setSalas(data || [])
       })
       .catch((err) => {
         console.error('Error al cargar salas', err)

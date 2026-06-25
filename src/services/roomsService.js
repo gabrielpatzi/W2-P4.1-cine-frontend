@@ -11,7 +11,7 @@ const roomsService = {
     return new Promise((resolve, reject) => {
       api.get('/salas')
         .then((response) => {
-          resolve(response.data)
+          resolve(response.data.rooms ?? response.data)
         })
         .catch((error) => {
           reject(error)

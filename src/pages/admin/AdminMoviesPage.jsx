@@ -24,7 +24,8 @@ const AdminMoviesPage = () => {
   const recargarPeliculas = () => {
     moviesService.getAll()
       .then((data) => {
-        setPeliculas(data)
+        console.log("ADMIN PELICULAS:", data)
+        setPeliculas(data || [])
       })
       .catch((err) => {
         console.error('Error al cargar películas', err)
@@ -36,7 +37,7 @@ const AdminMoviesPage = () => {
 
     moviesService.getAll()
       .then((data) => {
-        if (activo) setPeliculas(data)
+        if (activo) setPeliculas(data || [])
       })
       .catch((err) => {
         console.error('Error al cargar películas', err)
